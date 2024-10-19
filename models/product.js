@@ -1,5 +1,4 @@
 const fs = require('fs');
-const { get } = require('http');
 const path = require('path');
 
 const p = path.join(
@@ -40,7 +39,7 @@ module.exports = class Product {
     getProductsFromFile(cb);
   }
 
-  static findById(id, cb){
+  static findById(id, cb) {
     getProductsFromFile(products => {
       const product = products.find(p => p.id === id);
       cb(product);
